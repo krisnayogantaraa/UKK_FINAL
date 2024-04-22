@@ -26,9 +26,9 @@ class UserAccess
             // Pengguna mencoba mengakses rute yang tidak sesuai, arahkan ke rute sesuai perannya
             switch (auth()->user()->type) {
                 case 'admin':
-                    return redirect()->route('posts.index');
+                    return redirect()->route('major.index');
                 case 'user':
-                    return redirect()->route('warehouse2.index');
+                    return redirect()->route('pendaftaran.index');
                 case 'superroot':
                     return redirect()->route('users.index');
                 default:

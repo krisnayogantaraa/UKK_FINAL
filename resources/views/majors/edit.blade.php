@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<p class="text-5xl mb-3 text-gray-900 dark:text-white">Edit Data Jurusan</p>
+<p class="text-5xl mb-3 text-gray-900 dark:text-white">Edit Data Pendaftar</p>
 <form action="{{ route('major.update', $major->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')

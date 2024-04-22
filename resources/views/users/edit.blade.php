@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<p class="text-5xl mb-3 text-gray-900 dark:text-white mx-auto">Ubah Akun Baru</p>
+<p class="text-5xl mb-3 text-gray-900 dark:text-white mx-auto">Ubah Informasi Akun</p>
 
 <form action="{{ route('users.update', $User->id) }}" method="POST" enctype="multipart/form-data" class="mx-auto">
     @csrf
@@ -24,27 +24,18 @@
             <label for="type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis</label>
             <select id="type" name="type" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="">--Pilih--</option>
-                @if($User->type == "admin")
+                @if($User->type == "user")
+                <option selected value="0">User</option>
+                <option value="1">Admin</option>
+                <option value="2">Super root</option>
+                @elseif($User->type == "admin")
+                <option value="0">User</option>
                 <option selected value="1">Admin</option>
-                <option value="2">Operator</option>
-                <option value="3">gudang</option>
-                <option value="4">ekspedisi</option>
-                @elseif($User->type == "operator")
+                <option value="2">Super root</option>
+                @elseif($User->type == "superroot")
+                <option value="0">User</option>
                 <option value="1">Admin</option>
-                <option selected value="2">Operator</option>
-                <option value="2">Operator</option>
-                <option value="3">gudang</option>
-                <option value="4">ekspedisi</option>
-                @elseif($User->type == "gudang")
-                <option value="1">Admin</option>
-                <option value="2">Operator</option>
-                <option selected value="3">gudang</option>
-                <option value="4">ekspedisi</option>
-                @elseif($User->type == "ekspedisi")
-                <option value="1">Admin</option>
-                <option value="2">Operator</option>
-                <option value="3">gudang</option>
-                <option selected value="4">ekspedisi</option>
+                <option selected value="2">Super root</option>
                 @endif
             </select>
         </div>
@@ -71,7 +62,7 @@
         </div>
 
     </div>
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Submit</button>
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Ubah</button>
     <button type="reset" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">Reset</button>
 </form>
 @endsection

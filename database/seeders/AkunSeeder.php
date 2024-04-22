@@ -15,23 +15,23 @@ class AkunSeeder extends Seeder
    {
       $users = [
          [
-            'name' => 'user',
+            'name' => 'Rini Handayani(user)',
             'email' => 'user@gmail.com',
-            'nip' => 'user NIP',
+            'nip' => '196510070832001',
             'type' => 0,
             'password' => bcrypt('12345678'),
          ],
          [
-            'name' => 'Admin User',
+            'name' => 'Ahmad Fadli (Admin)',
             'email' => 'admin@gmail.com',
-            'nip' => 'admin NIP',
+            'nip' => '197203120219004',
             'type' => 1,
             'password' => bcrypt('12345678'),
          ],
          [
-            'name' => 'Superroot User',
-            'email' => 'superroot@gmail.com',
-            'nip' => 'superroot NIP',
+            'name' => 'Dewi Sartika (super)',
+            'email' => 'super@gmail.com',
+            'nip' => '198904040526003',
             'type' => 2,
             'password' => bcrypt('12345678'),
          ],

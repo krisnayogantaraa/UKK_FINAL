@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date('tgl_pendaftaran');
             $table->string('kd_jurusan');
-            $table->string('nisn');
+            $table->string('nisn')->unique();
             $table->string('jumlah_pembiayaan');
             $table->text('keterangan');
             $table->string('nama_petugas');

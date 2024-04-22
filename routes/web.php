@@ -47,7 +47,8 @@ All Admin User List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:user'])->group(function () {
-    Route::resource('/warehouse2', \App\Http\Controllers\MajorController::class);
+    Route::resource('/pendaftaran', \App\Http\Controllers\PendaftaranController::class);
+    Route::get('/datapendaftaran', [\App\Http\Controllers\PendaftaranController::class, 'pendaftaran'])->name('pendaftaran.pendaftaran');
 });
 
 /*------------------------------------------
